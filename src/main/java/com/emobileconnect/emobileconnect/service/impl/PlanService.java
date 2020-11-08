@@ -18,7 +18,7 @@ public interface PlanService  {
 
     Plan editPlan(Plan plan);
 
-    Plan getByName(char name);
+    Plan getByName(String name);
 
     void updatePlan(Plan plan);
 
