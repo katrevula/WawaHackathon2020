@@ -1,12 +1,12 @@
 package com.emobileconnect.emobileconnect.service.impl;
 
-import com.emobileconnect.emobileconnect.dao.RequestTrack;
+import com.emobileconnect.emobileconnect.model.Request;
 
 public class RequestTrackServiceImpl {
 	
-	public RequestTrack getRequestTracking() {
+	public Request getRequestTracking() {
 		
-		return new RequestTrack();
+		return new Request();
 	}
 
 }
