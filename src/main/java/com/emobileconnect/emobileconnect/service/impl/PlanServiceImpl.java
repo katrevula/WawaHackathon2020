@@ -14,7 +14,7 @@ public class PlanServiceImpl implements PlanService {
     @Autowired
     private PlanRepository planRepository;
 
-    
+
     @Override
     public List<Plan> getAllplans() {
         return planRepository.findAll();
@@ -38,7 +38,6 @@ public class PlanServiceImpl implements PlanService {
 
     @Override
     public Plan editPlan(Plan plan) {
-
         return planRepository.saveAndFlush(plan);
     }
 
@@ -50,6 +49,5 @@ public class PlanServiceImpl implements PlanService {
     @Override
     public void deletePlan(int id) {
         planRepository.deleteById(id);
-
     }
 }
