@@ -10,15 +10,13 @@ public interface PlanService  {
 
     boolean isPlanExist(Plan plan);
 
-    boolean isLetter(Plan plan);
+//    boolean isLetter(Plan plan);
 
     Plan addPlan(Plan plan);
 
     Plan getByID(int id);
 
     Plan editPlan(Plan plan);
-
-    Plan getByName(String name);
 
     void updatePlan(Plan plan);
 
