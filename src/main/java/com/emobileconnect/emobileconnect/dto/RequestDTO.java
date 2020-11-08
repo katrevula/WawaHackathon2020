@@ -1,23 +1,28 @@
 package com.emobileconnect.emobileconnect.dto;
 
 
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
+
 import org.springframework.web.multipart.MultipartFile;
 
 public class RequestDTO {
 	
+	private MultipartFile file;
+	
 	private String name;
 	
-	
+	@Email
 	private String email;
 	
-	
+	@NotBlank
 	private String mobile;
 	
 	
 	private Integer planId;
 	
 	
-	private MultipartFile file;
+	
 
 
 	public String getName() {
