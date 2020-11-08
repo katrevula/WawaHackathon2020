@@ -12,6 +12,6 @@ import org.springframework.stereotype.Repository;
 public interface PlanRepository extends JpaRepository<Plan, Integer> {
 
     @Query("select t from Plan t where t.plan_id = :id")
-    Plan findByBayId(@Param("id") int id);
+    Plan findByPlanId(@Param("id") int id);
 
 }
