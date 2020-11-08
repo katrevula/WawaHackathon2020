@@ -39,7 +39,17 @@ public class PlanController {
         return new ResponseEntity<>(headers, HttpStatus.CREATED);
     }
 
+// Get all Plans
+    public ResponseEntity<List<Plan>> listAllPlans(){
+        List<Plan> plans = planService.getAllplans();
 
+        if(plans.isEmpty()){
+            return new ResponseEntity(HttpStatus.NO_CONTENT);
+        }
+        else{
+            return new ResponseEntity<List<Plan>>(plans,HttpStatus.OK);
+        }
+    }
 
 
 
