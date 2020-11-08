@@ -32,4 +32,17 @@ public class RequestServiceImpl implements RequestService{
 		return responseDto;
 	}
 
+	@Override
+	public Request getRequestTracking(Request requesttrack) {
+		Request request = new Request();
+		BeanUtils.copyProperties(requesttrack, request);
+		
+		if(request.getDocument() != null && request.getMobile() != null && request.getPlanId() != null) {
+			request.setStatus(Status.APPROVED);	
+		}else if(request.getDocument() == null) {
+			request.setStatus(Status.REJECTED);		
+		}
+		return requesttrack;
+	}
+	
 }
