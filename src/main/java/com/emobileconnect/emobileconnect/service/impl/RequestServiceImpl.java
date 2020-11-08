@@ -38,11 +38,19 @@ public class RequestServiceImpl implements RequestService{
 		BeanUtils.copyProperties(requesttrack, request);
 		
 		if(request.getDocument() != null && request.getMobile() != null && request.getPlanId() != null) {
-			request.setStatus(Status.APPROVED.toString());	
+			request.setStatus(Status.APPROVED.toString());
 		}else if(request.getDocument() == null) {
 			request.setStatus(Status.REJECTED.toString());		
 		}
-		return requesttrack;
+		Request requestSaved = requestRepository.save(request);
+		ResponseDTO responseDto = new ResponseDTO();
+		responseDto.setRequestId(requestSaved.getRequestId());
+		responseDto.setStatus(responseDto.getStatus());
+		return requestSaved;
 	}
+	
+	
+	
+	
 	
 }
