@@ -8,7 +8,6 @@ import org.springframework.web.multipart.MultipartFile;
 
 public class RequestDTO {
 	
-	private MultipartFile file;
 	
 	private String name;
 	
@@ -65,14 +64,6 @@ public class RequestDTO {
 	}
 
 
-	public MultipartFile getFile() {
-		return file;
-	}
-
-
-	public void setFile(MultipartFile file) {
-		this.file = file;
-	}
 	
 	
 }
