@@ -10,7 +10,6 @@ import java.util.List;
 @Service
 public class PlanServiceImpl implements PlanService {
 
-
     @Autowired
     private PlanRepository planRepository;
 
