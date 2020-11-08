@@ -15,11 +15,11 @@ public class Plan {
     @NotNull
     private String plan_Name;
 
-    @NotNull
-    private int Talktime;
 
-    @NotNull
-    private double Data;
+    private int talktime;
+
+
+    private double data;
 
     public int getPlan_id() {
         return plan_id;
@@ -38,18 +38,18 @@ public class Plan {
     }
 
     public int getTalktime() {
-        return Talktime;
+        return talktime;
     }
 
     public void setTalktime(int talktime) {
-        Talktime = talktime;
+        this.talktime = talktime;
     }
 
     public double getData() {
-        return Data;
+        return data;
     }
 
     public void setData(double data) {
-        Data = data;
+        this.data = data;
     }
 }
