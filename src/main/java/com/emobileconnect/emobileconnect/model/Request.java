@@ -8,7 +8,6 @@ import javax.persistence.Id;
 import javax.persistence.Lob;
 import javax.persistence.Table;
 
-import com.emobileconnect.emobileconnect.dto.Status;
 
 @Entity
 @Table(name = "request")
@@ -34,7 +33,7 @@ public class Request {
 	private String comment;
 	
 	@Column(name = "status")
-	private Status status;
+	private String status;
 	
 	@Column(name = "assigned_number_id")
 	private Integer assignedNumberId;
@@ -90,11 +89,11 @@ public class Request {
 		this.comment = comment;
 	}
 
-	public Status getStatus() {
+	public String getStatus() {
 		return status;
 	}
 
-	public void setStatus(Status status) {
+	public void setStatus(String status) {
 		this.status = status;
 	}
 
