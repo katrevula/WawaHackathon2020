@@ -4,6 +4,7 @@ import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -15,6 +16,8 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.emobileconnect.emobileconnect.dto.RequestDTO;
+import com.emobileconnect.emobileconnect.dto.Status;
+import com.emobileconnect.emobileconnect.model.Request;
 import com.emobileconnect.emobileconnect.service.impl.RequestService;
 
 @RestController
@@ -30,12 +33,14 @@ public class RequestController {
 			@RequestPart("file") @Valid @NotNull @NotBlank MultipartFile file) {
 		try {
 
-			RequestDTO requestDto = new RequestDTO();
-			requestDto.setName(name);
-			requestDto.setEmail(email);
-			requestDto.setMobile(mobile);
-			requestDto.setPlanId(planId);
-			return ResponseEntity.ok().body(requestService.createRequest(requestDto, file));
+			Request request = new Request();
+			request.setName(name);
+			request.setEmail(email);
+			request.setMobile(mobile);
+			request.setPlanId(planId);
+			request.setDocument(file.getBytes());
+			request.setStatus(Status.IN_PROGRESS.toString());
+			return ResponseEntity.ok().body(requestService.createRequest(request));
 
 		} catch (Exception e) {
 			return new ResponseEntity<>(HttpStatus.BAD_REQUEST);

@@ -7,6 +7,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Lob;
 import javax.persistence.Table;
+import javax.validation.constraints.Email;
 
 
 @Entity
@@ -20,6 +21,7 @@ public class Request {
 	@Column(name = "name")
 	private String name;
 	
+	@Email
 	@Column(name = "email")
 	private String email;
 	
