@@ -1,5 +1,6 @@
 package com.emobileconnect.emobileconnect.service.impl;
 
+<<<<<<< HEAD:src/main/java/com/emobileconnect/emobileconnect/service/impl/PlanServiceImpl.java
 import com.emobileconnect.emobileconnect.dao.PlanRepository;
 import com.emobileconnect.emobileconnect.model.Plan;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -51,4 +52,7 @@ public class PlanServiceImpl implements PlanService {
     public void deletePlan(int id) {
         planRepository.deleteById(id);
     }
+=======
+public interface AssignService {
+>>>>>>> origin/feature/assginePhonetoCustomer:src/main/java/com/emobileconnect/emobileconnect/service/impl/AssignService.java
 }
