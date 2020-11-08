@@ -1,10 +1,20 @@
 package com.emobileconnect.emobileconnect.service.impl;
 
+import com.emobileconnect.emobileconnect.dao.PlanRepository;
 import com.emobileconnect.emobileconnect.model.Plan;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class PlanServiceImpl implements PlanService {
+
+
+    @Autowired
+    private PlanRepository planRepository;
+
+
     @Override
     public List<Plan> getAllplans() {
         return null;
@@ -12,11 +22,6 @@ public class PlanServiceImpl implements PlanService {
 
     @Override
     public boolean isPlanExist(Plan plan) {
-        return false;
-    }
-
-    @Override
-    public boolean isLetter(Plan plan) {
         return false;
     }
 
@@ -32,11 +37,6 @@ public class PlanServiceImpl implements PlanService {
 
     @Override
     public Plan editPlan(Plan plan) {
-        return null;
-    }
-
-    @Override
-    public Plan getByName(String name) {
         return null;
     }
 
