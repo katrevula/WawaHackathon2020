@@ -4,8 +4,6 @@ import com.sun.istack.NotNull;
 
 import javax.persistence.*;
 
-
-
 @Entity
 @Table(name = "plan")
 @SequenceGenerator(name = "seq", initialValue = 1)
