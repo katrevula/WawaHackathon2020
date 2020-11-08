@@ -23,7 +23,7 @@ public class RequestServiceImpl implements RequestService{
 		Request request = new Request();
 		BeanUtils.copyProperties(requestDto, request);
 		request.setDocument(requestDto.getFile().getBytes());
-		request.setStatus(Status.IN_PROGRESS);
+		request.setStatus(Status.IN_PROGRESS.toString());
 		Request requestSaved = requestRepository.save(request);
 		ResponseDTO responseDto = new ResponseDTO();
 		responseDto.setRequestId(requestSaved.getRequestId());
